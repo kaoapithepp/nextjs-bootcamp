@@ -25,7 +25,7 @@ export const ArtistCard = ({ artist }: { artist: ArtistFetchingDTO }) => {
         <h2 className="text-gray-100 text-4xl font-medium">{artist.name}</h2>
         <ul className="list-none flex flex-wrap gap-2 mt-4">
           {artist.genres.map((item, key) => {
-            return <Tag key={key}>{item}</Tag>;
+            return <Tag key={key}>{item.toUpperCase()}</Tag>;
           })}
         </ul>
       </section>
