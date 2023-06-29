@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { getSpotifyDataNoAuth } from "@/services/getData";
+import { getSpotifyDataNoAuth } from "@/services/server/getData";
 import { ArtistCard } from "@/components/ArtistCard";
 
 export interface ArtistFetchingDTO {
@@ -30,7 +30,7 @@ const ArtistsPage = async () => {
   );
 
   return (
-    <section className="px-4">
+    <section className="pb-4">
       <h1 className="text-8xl text-gray-100 font-bold mt-4">Artists</h1>
       <div className="grid grid-cols-3 gap-4">
         {data.artists.map((elem: ArtistFetchingDTO, key: number) => {

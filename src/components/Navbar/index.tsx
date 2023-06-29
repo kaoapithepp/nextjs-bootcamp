@@ -1,7 +1,9 @@
+"use client";
 import { UNPROTECTED_PATH } from "@/constants/path.route";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../Button";
+import useViewModel from "./viewModel";
 
 type NavListType = {
   item: string;
@@ -16,6 +18,8 @@ const navLists = [
 ];
 
 export const Navbar = () => {
+  const { handleOnSignInClick } = useViewModel();
+
   return (
     <div className="bg-gray-100 p-4 w-screen flex items-center justify-center sticky z-40">
       <section className="max-w-[1200px] flex w-full items-center">
@@ -47,7 +51,9 @@ export const Navbar = () => {
               );
             })}
           </ul>
-          <Button variant="dark">Sign In</Button>
+          <Button variant="dark" onClick={() => handleOnSignInClick()}>
+            Sign In
+          </Button>
         </div>
       </section>
     </div>
