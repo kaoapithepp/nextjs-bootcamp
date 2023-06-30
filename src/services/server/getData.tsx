@@ -1,3 +1,5 @@
+export const spotifyOAuth = async (path?: string) => {};
+
 export const getSpotifyDataNoAuth = async (path?: string) => {
   const res = await fetch("https://api.spotify.com/v1" + path, {
     headers: {

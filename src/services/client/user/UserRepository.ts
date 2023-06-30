@@ -1,3 +1,4 @@
+import { IUserAuth } from "@/services/interfaces/user.interface";
 import { UserServiceAble } from "../remotes/user.interface";
 
 export class UserRepository {
@@ -7,7 +8,7 @@ export class UserRepository {
     this.service = remote;
   }
 
-  signInOAuth = async (code: string) => {
-    return this.service.getAccessTokenSpotify(code);
+  signInOAuth = async (code: string): Promise<IUserAuth> => {
+    return await this.service.getAccessTokenSpotify(code);
   };
 }

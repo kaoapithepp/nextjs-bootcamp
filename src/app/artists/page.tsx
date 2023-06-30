@@ -2,32 +2,15 @@ import React from "react";
 import Link from "next/link";
 import { getSpotifyDataNoAuth } from "@/services/server/getData";
 import { ArtistCard } from "@/components/ArtistCard";
-
-export interface ArtistFetchingDTO {
-  external_urls: {
-    spotify: string;
-  };
-  followers: {
-    total: number;
-  };
-  genres: string[];
-  href: string;
-  id: string;
-  images: {
-    height: number;
-    url: string;
-    width: number;
-  }[];
-  name: string;
-  popularity: number;
-  type: string;
-  uri: string;
-}
+import { MOCK_ARTIST } from "@/mock/artists";
+import { ArtistFetchingDTO } from "@/services/interfaces/artists.interface";
 
 const ArtistsPage = async () => {
-  const data = await getSpotifyDataNoAuth(
-    "/artists?ids=6bDWAcdtVR3WHz2xtiIPUi,0blbVefuxOGltDBa00dspv,5Vo1hnCRmCM6M4thZCInCj,64tJ2EAv1R6UaZqc4iOCyj"
-  );
+  // const data = await getSpotifyDataNoAuth(
+  //   "/artists?ids=6bDWAcdtVR3WHz2xtiIPUi,0blbVefuxOGltDBa00dspv,5Vo1hnCRmCM6M4thZCInCj,64tJ2EAv1R6UaZqc4iOCyj"
+  // );
+
+  const data = MOCK_ARTIST;
 
   return (
     <section className="pb-4">

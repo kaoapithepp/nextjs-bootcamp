@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
-import "./globals.css";
+import AuthProvider from "@/context/AuthProvider";
 import { Inter } from "next/font/google";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="relative flex flex-col">
-          <header className="sticky z-40 top-0 left-0 p-0">
-            <Navbar />
-          </header>
-          <div className="pb-10 px-10">{children}</div>
-        </div>
+        <AuthProvider>
+          <div className="relative flex flex-col">
+            <header className="sticky z-40 top-0 left-0 p-0">
+              <Navbar />
+            </header>
+            <div className="pb-10 px-10">{children}</div>
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

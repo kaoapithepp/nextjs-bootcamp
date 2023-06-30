@@ -1,6 +1,6 @@
 "use client";
 import { getSpotifyDataNoAuth } from "@/services/server/getData";
-import { ArtistFetchingDTO } from "../page";
+import { ArtistFetchingDTO } from "@/services/interfaces/artists.interface";
 import Image from "next/image";
 import { TopTrackCard } from "@/components/TopTrackCard";
 import Link from "next/link";

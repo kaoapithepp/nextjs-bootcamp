@@ -1,4 +1,4 @@
-import { ArtistFetchingDTO } from "@/app/artists/page";
+import { ArtistFetchingDTO } from "@/services/interfaces/artists.interface";
 import Image from "next/image";
 
 const Tag = ({ children }: { children: React.ReactNode }) => {
@@ -12,12 +12,12 @@ const Tag = ({ children }: { children: React.ReactNode }) => {
 export const ArtistCard = ({ artist }: { artist: ArtistFetchingDTO }) => {
   return (
     <div className="p-4 flex flex-col rounded-2xl duration-300 bg-gradient-to-b hover:from-lime-400 hover:to-green-700 hover:scale-105">
-      <div className="flex items-center">
+      <div className="flex items-center aspect-1/1">
         <Image
           src={artist.images[0].url}
           alt={artist.name}
-          width={artist.images[1].width}
-          height={artist.images[1].height}
+          width={640}
+          height={640}
           className="rounded-full"
         />
       </div>

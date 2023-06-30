@@ -1,5 +1,9 @@
 const ProfilePage = () => {
-  return <div>Profile</div>;
+  return (
+    <div>
+      <h1 className="text-white">Profile</h1>
+    </div>
+  );
 };
 
 export default ProfilePage;
